@@ -34,7 +34,8 @@ const App = () => {
   };
   return (
     <View style={styles.newContainer(darkMode)}>
-      <TouchableOpacity onPress={changeDarkMode} style={styles.button(darkMode)}>
+      <StatusBar backgroundColor={darkMode ? '#282C35' : 'white'} barStyle={darkMode ? 'light-content' : 'dark-content'} />
+      <TouchableOpacity testID='btnChange' onPress={changeDarkMode} style={styles.button(darkMode)}>
         <Text style={styles.textButton(darkMode)}>Switch</Text>
       </TouchableOpacity>
     </View>

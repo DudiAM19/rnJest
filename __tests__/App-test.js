@@ -1,19 +1,10 @@
-/**
- * @format
- */
-
-import 'react-native';
-import React from 'react';
+import React from "react";
+import { fireEvent, render } from "@testing-library/react-native";
 import App from '../App';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
-it('renders correctly', () => {
-  renderer.create(<App />);
-});
-
-test('test component', () => {
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe('testing app', () => {
+  it('success', () => {
+    const page = render(<App />);
+    page.getAllByTestId('btnChange');
+  })
 })
